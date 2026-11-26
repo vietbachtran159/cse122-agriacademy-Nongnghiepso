@@ -1,0 +1,246 @@
+/* =========================================================
+   calendar.css – Lịch mùa vụ tương tác
+   ========================================================= */
+
+.calendar-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.calendar-toolbar .month-label {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--green-900);
+  min-width: 168px;
+  text-align: center;
+  text-transform: capitalize;
+}
+
+.calendar-toolbar .spacer { flex: 1; }
+
+.season-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin: 0 0 16px;
+  padding: 12px 14px;
+  border: 1px solid var(--line);
+  border-radius: var(--r-md);
+  background: var(--canvas-alt);
+  font-size: 0.8rem;
+  color: var(--ink-700);
+}
+
+.season-legend .item { display: inline-flex; align-items: center; gap: 7px; }
+
+.season-legend .swatch {
+  width: 14px;
+  height: 14px;
+  border-radius: 4px;
+  flex: none;
+}
+
+.calendar {
+  --cols: 7;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: var(--r-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-xs);
+}
+
+.calendar__dow {
+  display: grid;
+  grid-template-columns: repeat(var(--cols), minmax(0, 1fr));
+  background: var(--canvas-alt);
+  border-bottom: 1px solid var(--line);
+}
+
+.calendar__dow span {
+  padding: 10px 8px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: var(--ink-500);
+  text-align: center;
+}
+
+.calendar__grid {
+  display: grid;
+  grid-template-columns: repeat(var(--cols), minmax(0, 1fr));
+}
+
+.day {
+  position: relative;
+  min-height: 92px;
+  padding: 7px 8px 8px;
+  border-right: 1px solid var(--line-soft);
+  border-bottom: 1px solid var(--line-soft);
+  background: var(--paper);
+  font-size: 0.78rem;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  transition: background 0.12s ease;
+}
+
+.day:nth-child(7n) { border-right: 0; }
+
+.day--out { background: #fafbf9; color: var(--ink-400); }
+.day--out .day__num { opacity: 0.5; }
+
+.day--today { background: var(--green-50); }
+.day--today .day__num {
+  background: var(--green-700);
+  color: #fff;
+  border-radius: 7px;
+  padding: 0 6px;
+}
+
+.day--weekend { background: #fcfbf6; }
+.day--today.day--weekend { background: var(--green-50); }
+
+.day__num {
+  font-weight: 700;
+  font-size: 0.78rem;
+  color: var(--ink-700);
+  width: fit-content;
+  line-height: 1.6;
+  font-variant-numeric: tabular-nums;
+}
+
+.day__badges { display: flex; flex-direction: column; gap: 3px; margin-top: auto; }
+
+.phase-chip {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 3px 7px;
+  border-radius: 6px;
+  font-size: 0.68rem;
+  font-weight: 700;
+  line-height: 1.3;
+  border: 1px solid transparent;
+  cursor: grab;
+  user-select: none;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  transition: transform 0.12s ease, box-shadow 0.12s ease;
+}
+
+.phase-chip:active { cursor: grabbing; }
+
+.phase-chip:hover { transform: translateY(-1px); box-shadow: var(--shadow-xs); }
+
+.phase-chip.is-dragging { opacity: 0.45; }
+
+.phase-chip .handle { opacity: 0.55; font-size: 0.7em; }
+
+.phase-chip[data-phase="gieo"] { background: #e6f4e6; color: #1f6b28; border-color: #c8e6c9; }
+.phase-chip[data-phase="cay"] { background: #e8f5e9; color: #2e7d32; border-color: #cde8cf; }
+.phase-chip[data-phase="cham-soc"] { background: #fdf3dd; color: #8a5a0b; border-color: #f2dfb2; }
+.phase-chip[data-phase="bon-phan"] { background: #fdeee7; color: #9c4221; border-color: #f4d4c4; }
+.phase-chip[data-phase="thu-hoach"] { background: #e6f0fb; color: #24588f; border-color: #cbdcf1; }
+
+.phase-chip .mono { font-variant-numeric: tabular-nums; font-weight: 600; opacity: 0.8; }
+
+.day.is-drop-target {
+  background: #eef7ee;
+  box-shadow: inset 0 0 0 2px var(--green-500);
+}
+
+.day.is-drop-target .day__badges::after {
+  content: "Thả để dời lịch";
+  font-size: 0.64rem;
+  font-weight: 700;
+  color: var(--green-700);
+  background: #fff;
+  border-radius: 5px;
+  padding: 2px 6px;
+  width: fit-content;
+}
+
+.day.is-disabled { background: #f4f4f1; }
+
+/* Agenda bên phải */
+.agenda { display: flex; flex-direction: column; gap: 10px; }
+
+.agenda__item {
+  display: flex;
+  gap: 11px;
+  padding: 10px 12px;
+  border-radius: var(--r-sm);
+  border: 1px solid var(--line-soft);
+  background: var(--paper);
+  font-size: 0.84rem;
+}
+
+.agenda__item .bar {
+  width: 4px;
+  border-radius: 4px;
+  flex: none;
+  background: var(--green-500);
+}
+
+.agenda__item[data-phase="cham-soc"] .bar { background: var(--amber-500); }
+.agenda__item[data-phase="bon-phan"] .bar { background: var(--clay-600); }
+.agenda__item[data-phase="thu-hoach"] .bar { background: var(--sky-600); }
+
+.agenda__item strong { display: block; font-size: 0.85rem; }
+.agenda__item span { color: var(--ink-500); font-size: 0.78rem; }
+
+.phase-editor {
+  display: grid;
+  gap: 10px;
+}
+
+.phase-editor .row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto auto auto;
+  gap: 8px;
+  align-items: center;
+  padding: 8px;
+  border: 1px solid var(--line-soft);
+  border-radius: var(--r-sm);
+  background: var(--canvas-alt);
+}
+
+.phase-editor .row .name { font-size: 0.83rem; font-weight: 600; }
+
+.phase-editor input[type="date"] {
+  font: inherit;
+  font-size: 0.79rem;
+  padding: 4px 6px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: #fff;
+  color: var(--ink-700);
+}
+
+.cal-hint {
+  font-size: 0.79rem;
+  color: var(--ink-500);
+  display: flex;
+  align-items: flex-start;
+  gap: 7px;
+  margin-top: 12px;
+}
+
+/* Thu nhỏ cho lịch trong dashboard */
+.calendar--mini .day { min-height: 58px; padding: 5px 6px; }
+.calendar--mini .phase-chip { font-size: 0.62rem; padding: 2px 5px; }
+.calendar--mini .calendar__dow span { padding: 7px 4px; font-size: 0.66rem; }
+
+@media (max-width: 720px) {
+  .day { min-height: 66px; padding: 5px 5px 6px; }
+  .phase-chip { font-size: 0.6rem; padding: 2px 5px; }
+  .phase-chip .range { display: none; }
+  .calendar__dow span { font-size: 0.62rem; padding: 8px 2px; }
+  .calendar-toolbar .month-label { min-width: 120px; font-size: 0.95rem; }
+  .phase-editor .row { grid-template-columns: 1fr 1fr; }
+}
