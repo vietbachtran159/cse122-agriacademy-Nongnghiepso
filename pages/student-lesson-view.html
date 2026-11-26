@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bài giảng · AgriAcademy</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/modules.css">
+  <link rel="stylesheet" href="../css/responsive.css">
+</head>
+<body data-page="student-lesson-view" data-role="student">
+
+  <div class="app">
+    <header class="topbar" id="topbar"></header>
+    <div class="shell">
+      <aside class="sidebar" id="sidebar" aria-label="Điều hướng chính"></aside>
+      <main class="main" id="main">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <a href="student-dashboard.html">Tổng quan</a><span class="sep">/</span>
+          <span class="current">Bài giảng</span>
+        </nav>
+
+        <div class="page-head">
+          <div>
+            <h1>Bài giảng môn Nông nghiệp</h1>
+            <p class="sub">Chọn bài ở cột bên trái, đánh dấu đã học để theo dõi tiến độ của bạn.</p>
+          </div>
+        </div>
+
+        <div class="lesson-layout">
+          <aside class="card lesson-toc" aria-labelledby="toc-title">
+            <h2 id="toc-title" style="font-size:.92rem;text-transform:uppercase;letter-spacing:.06em;color:var(--ink-500)">Mục lục</h2>
+            <nav class="toc-list" id="lesson-list" aria-label="Danh sách bài giảng"></nav>
+          </aside>
+
+          <article class="lesson-body" id="lesson-content">
+            <div class="lesson-head">
+              <h2 id="lesson-title">Đang tải bài giảng…</h2>
+              <p class="muted" id="lesson-summary"></p>
+              <div class="lesson-meta">
+                <span>Chủ đề: <strong id="lesson-topic">—</strong></span>
+                <span>⏱ <span id="lesson-duration">—</span></span>
+                <span>Cập nhật: <span id="lesson-updated">—</span></span>
+              </div>
+            </div>
+            <div class="prose" id="lesson-body">
+              <div class="skeleton skeleton--line w-80"></div>
+              <div class="skeleton skeleton--line"></div>
+              <div class="skeleton skeleton--line w-60"></div>
+              <div class="skeleton skeleton--block" style="margin-top:14px"></div>
+            </div>
+            <div class="lesson-footer">
+              <button class="btn btn--ghost" type="button" id="lesson-prev">← Bài trước</button>
+              <button class="btn btn--primary" type="button" id="mark-done">Đánh dấu đã học</button>
+              <button class="btn btn--ghost" type="button" id="lesson-next">Bài tiếp →</button>
+            </div>
+          </article>
+
+          <aside class="card lesson-aside" aria-labelledby="progress-title">
+            <h2 id="progress-title" style="font-size:1.05rem">Tiến độ của bạn</h2>
+            <p class="small muted" id="lesson-progress-text">0/0 bài đã học</p>
+            <div class="progress mb-1"><span id="lesson-progress-bar" style="width:0%"></span></div>
+            <p class="strong" id="lesson-progress-percent" style="margin:0 0 10px">0%</p>
+            <div class="divider"></div>
+            <h3 style="font-size:.9rem">Bài tập liên quan</h3>
+            <div class="list-clean" id="related-exercises"></div>
+          </aside>
+        </div>
+      </main>
+    </div>
+    <footer class="foot" id="foot"></footer>
+  </div>
+
+  <script src="../js/data/seed.js"></script>
+  <script src="../js/api.js"></script>
+  <script src="../js/main.js"></script>
+  <script src="../js/modules/lesson.js"></script>
+</body>
+</html>

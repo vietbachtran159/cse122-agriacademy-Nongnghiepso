@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Nhật ký cây trồng · AgriAcademy</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/modules.css">
+  <link rel="stylesheet" href="../css/responsive.css">
+</head>
+<body data-page="student-crop-journal" data-role="student">
+
+  <div class="app">
+    <header class="topbar" id="topbar"></header>
+    <div class="shell">
+      <aside class="sidebar" id="sidebar" aria-label="Điều hướng chính"></aside>
+      <main class="main" id="main">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <a href="student-dashboard.html">Tổng quan</a><span class="sep">/</span>
+          <span class="current">Nhật ký cây trồng</span>
+        </nav>
+
+        <div class="page-head">
+          <div>
+            <h1>Nhật ký cây trồng</h1>
+            <p class="sub">Ghi lại hoạt động chăm sóc sau mỗi lần thăm ruộng. Dữ liệu giúp bạn đối chiếu khi cây có vấn đề.</p>
+          </div>
+          <div class="page-head__actions">
+            <button class="btn btn--ghost" type="button" id="journal-today">Ghi hôm nay</button>
+            <button class="btn btn--primary" type="button" id="journal-add">+ Ghi nhật ký</button>
+          </div>
+        </div>
+
+        <section class="card mb-2">
+          <div class="kpi-row" id="journal-stats">
+            <div class="kpi"><b>—</b><span>tổng bản ghi</span></div>
+          </div>
+        </section>
+
+        <div class="filter-bar">
+          <div class="search-field">
+            <span class="icon" aria-hidden="true">⌕</span>
+            <label class="visually-hidden" for="journal-search">Tìm trong nhật ký</label>
+            <input class="input" id="journal-search" type="search" placeholder="Tìm hoạt động, ghi chú, thời tiết…">
+          </div>
+          <label class="visually-hidden" for="journal-crop">Lọc theo cây trồng</label>
+          <select class="select" id="journal-crop"><option value="">Tất cả cây trồng</option></select>
+          <span class="result-count" id="journal-count">Đang tải…</span>
+        </div>
+
+        <div class="journal-list" id="journal-list" aria-live="polite">
+          <div class="card"><div class="skeleton skeleton--line w-60"></div><div class="skeleton skeleton--line"></div><div class="skeleton skeleton--line w-80"></div></div>
+          <div class="card"><div class="skeleton skeleton--line w-60"></div><div class="skeleton skeleton--line"></div><div class="skeleton skeleton--line w-80"></div></div>
+        </div>
+
+        <div class="callout callout--info mt-2">
+          <span class="ico" aria-hidden="true">i</span>
+          <span>Mẹo: ghi cả thời tiết và liều lượng để lần sau đối chiếu. Bạn có thể sửa hoặc xóa bản ghi bất cứ lúc nào.</span>
+        </div>
+      </main>
+    </div>
+    <footer class="foot" id="foot"></footer>
+  </div>
+
+  <script src="../js/data/seed.js"></script>
+  <script src="../js/api.js"></script>
+  <script src="../js/main.js"></script>
+  <script src="../js/modules/crop-journal.js"></script>
+</body>
+</html>

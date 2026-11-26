@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bài tập tình huống · AgriAcademy</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/modules.css">
+  <link rel="stylesheet" href="../css/responsive.css">
+</head>
+<body data-page="student-exercise-do" data-role="student">
+
+  <div class="app">
+    <header class="topbar" id="topbar"></header>
+    <div class="shell">
+      <aside class="sidebar" id="sidebar" aria-label="Điều hướng chính"></aside>
+      <main class="main" id="main">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <a href="student-dashboard.html">Tổng quan</a><span class="sep">/</span>
+          <span class="current">Bài tập tình huống</span>
+        </nav>
+
+        <div id="exercise-picker">
+          <div class="page-head">
+            <div>
+              <h1>Bài tập tình huống</h1>
+              <p class="sub">Mỗi bài gồm nhiều bước chẩn đoán và xử lý. Bạn nhận lời giải ngay sau mỗi bước, sau đó nộp bài để giảng viên chấm điểm.</p>
+            </div>
+          </div>
+
+          <div class="grid grid--3" id="exercise-list" aria-live="polite">
+            <div class="card"><div class="skeleton skeleton--line w-60"></div><div class="skeleton skeleton--line w-80"></div><div class="skeleton skeleton--line"></div></div>
+            <div class="card"><div class="skeleton skeleton--line w-60"></div><div class="skeleton skeleton--line w-80"></div><div class="skeleton skeleton--line"></div></div>
+            <div class="card"><div class="skeleton skeleton--line w-60"></div><div class="skeleton skeleton--line w-80"></div><div class="skeleton skeleton--line"></div></div>
+          </div>
+
+          <section class="section mt-2" aria-labelledby="history-title">
+            <div class="section-head">
+              <h2 id="history-title">Bài đã nộp</h2>
+              <span class="hint">Trạng thái chấm bài</span>
+            </div>
+            <div class="card">
+              <div class="list-clean" id="exercise-history">
+                <p class="small muted" style="margin:0">Đang tải…</p>
+              </div>
+            </div>
+          </section>
+        </div>
+
+        <div id="exercise-player" hidden>
+          <div class="exercise-shell">
+            <div class="flex-between mb-1">
+              <div>
+                <p class="small muted" style="margin:0"><span aria-hidden="true">🌱</span> <span id="player-crop"></span></p>
+                <h1 id="player-title" style="font-size:1.4rem;margin:2px 0 0">Bài tập</h1>
+              </div>
+              <button class="btn btn--ghost btn--sm" type="button" id="back-to-list-top">← Danh sách bài</button>
+            </div>
+
+            <div class="step-track" id="exercise-progress" aria-label="Tiến độ các bước"></div>
+            <div id="exercise-body" aria-live="polite"></div>
+          </div>
+        </div>
+      </main>
+    </div>
+    <footer class="foot" id="foot"></footer>
+  </div>
+
+  <script src="../js/data/seed.js"></script>
+  <script src="../js/api.js"></script>
+  <script src="../js/main.js"></script>
+  <script src="../js/modules/exercise.js"></script>
+</body>
+</html>

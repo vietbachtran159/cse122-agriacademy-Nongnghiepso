@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Thông báo · AgriAcademy</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/modules.css">
+  <link rel="stylesheet" href="../css/responsive.css">
+</head>
+<body data-page="notifications" data-role="student,teacher,admin">
+
+  <div class="app">
+    <header class="topbar" id="topbar"></header>
+    <div class="shell">
+      <aside class="sidebar" id="sidebar" aria-label="Điều hướng chính"></aside>
+      <main class="main main--narrow" id="main">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <a href="../index.html">Trang chủ</a><span class="sep">/</span>
+          <span class="current">Thông báo</span>
+        </nav>
+
+        <div class="page-head">
+          <div>
+            <h1>Thông báo</h1>
+            <p class="sub">Cập nhật về bài giảng, lịch mùa vụ, bài nộp và kiểm duyệt nội dung.</p>
+          </div>
+          <div class="page-head__actions">
+            <button class="btn btn--ghost" type="button" id="notif-mark-all">Đánh dấu tất cả đã đọc</button>
+          </div>
+        </div>
+
+        <div class="flex-between mb-2">
+          <div class="tabs" id="notif-filter" style="margin:0;border:0;gap:6px">
+            <button class="pill is-active" type="button" data-filter="all">Tất cả</button>
+            <button class="pill" type="button" data-filter="unread">Chưa đọc</button>
+          </div>
+          <span class="badge badge--warning" id="notif-count">Đang tải…</span>
+        </div>
+
+        <section class="card card--flush">
+          <div class="notif-list" id="notif-list" aria-live="polite">
+            <div class="notif"><div class="skeleton skeleton--line" style="flex:1"></div></div>
+            <div class="notif"><div class="skeleton skeleton--line" style="flex:1"></div></div>
+          </div>
+        </section>
+
+        <div class="callout callout--info mt-2">
+          <span class="ico" aria-hidden="true">i</span>
+          <span>Thông báo hệ thống (không gắn người nhận) được gửi tới mọi tài khoản. Thông báo cá nhân chỉ hiển thị với người nhận.</span>
+        </div>
+      </main>
+    </div>
+    <footer class="foot" id="foot"></footer>
+  </div>
+
+  <script src="../js/data/seed.js"></script>
+  <script src="../js/api.js"></script>
+  <script src="../js/main.js"></script>
+  <script src="../js/modules/account.js"></script>
+</body>
+</html>

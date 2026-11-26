@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Hồ sơ cá nhân · AgriAcademy</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/modules.css">
+  <link rel="stylesheet" href="../css/responsive.css">
+</head>
+<body data-page="profile" data-role="student,teacher,admin">
+
+  <div class="app">
+    <header class="topbar" id="topbar"></header>
+    <div class="shell">
+      <aside class="sidebar" id="sidebar" aria-label="Điều hướng chính"></aside>
+      <main class="main main--narrow" id="main">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <a href="../index.html">Trang chủ</a><span class="sep">/</span>
+          <span class="current">Hồ sơ cá nhân</span>
+        </nav>
+
+        <section class="profile-head">
+          <span class="avatar avatar--lg" id="profile-avatar">?</span>
+          <div>
+            <h1 id="profile-name">Đang tải…</h1>
+            <p class="role-line" id="profile-role">—</p>
+            <p class="role-line" id="profile-email">—</p>
+          </div>
+          <div class="btn-row">
+            <a class="btn btn--ghost" href="settings.html">Cài đặt</a>
+            <a class="btn btn--ghost" href="notifications.html">Thông báo</a>
+          </div>
+        </section>
+
+        <section class="stat-grid" id="profile-stats" aria-label="Thống kê cá nhân">
+          <div class="stat"><div><div class="skeleton skeleton--line w-60"></div><div class="skeleton skeleton--line w-80"></div></div></div>
+          <div class="stat"><div><div class="skeleton skeleton--line w-60"></div><div class="skeleton skeleton--line w-80"></div></div></div>
+          <div class="stat"><div><div class="skeleton skeleton--line w-60"></div><div class="skeleton skeleton--line w-80"></div></div></div>
+          <div class="stat"><div><div class="skeleton skeleton--line w-60"></div><div class="skeleton skeleton--line w-80"></div></div></div>
+        </section>
+
+        <div class="grid grid--sidebar">
+          <section class="card" aria-labelledby="edit-title">
+            <div class="card__head">
+              <div>
+                <h2 id="edit-title" style="font-size:1.05rem">Thông tin cá nhân</h2>
+                <p class="card__hint">Email liên hệ của hồ sơ, không thể thay đổi trong bản demo.</p>
+              </div>
+            </div>
+            <form id="profile-form" novalidate>
+              <div class="form-grid">
+                <div class="field">
+                  <label for="p-name">Họ và tên</label>
+                  <input class="input" id="p-name" name="name" autocomplete="name">
+                  <span class="field__error" role="alert"></span>
+                </div>
+                <div class="field">
+                  <label for="p-email">Email</label>
+                  <input class="input" id="p-email" type="email" value="" disabled>
+                  <span class="field__hint">Liên hệ quản trị viên nếu cần đổi email.</span>
+                </div>
+                <div class="field">
+                  <label for="p-class">Lớp / đơn vị</label>
+                  <input class="input" id="p-class" name="class">
+                </div>
+                <div class="field">
+                  <label for="p-phone">Điện thoại</label>
+                  <input class="input" id="p-phone" name="phone" type="tel">
+                </div>
+                <div class="field">
+                  <label for="p-code">Mã sinh viên</label>
+                  <input class="input" id="p-code" name="studentCode">
+                </div>
+              </div>
+              <div class="form-actions">
+                <button class="btn btn--primary" type="submit">Lưu thay đổi</button>
+                <a class="btn btn--ghost" href="settings.html">Cài đặt</a>
+              </div>
+            </form>
+          </section>
+
+          <aside class="card" aria-labelledby="meta-title">
+            <div class="card__head"><h2 id="meta-title" style="font-size:1.05rem">Thông tin tài khoản</h2></div>
+            <div class="list-clean">
+              <div class="list-row"><span class="ico">☺</span><span class="grow"><strong>Mã sinh viên</strong><span id="profile-code">—</span></span></div>
+              <div class="list-row"><span class="ico">✆</span><span class="grow"><strong>Điện thoại</strong><span id="profile-phone">—</span></span></div>
+              <div class="list-row"><span class="ico">▤</span><span class="grow"><strong>Ngày tham gia</strong><span id="profile-joined">—</span></span></div>
+            </div>
+            <div class="divider"></div>
+            <div class="callout"><span class="ico">i</span><span>Dữ liệu hồ sơ được lưu trong trình duyệt của bạn (mock API).</span></div>
+          </aside>
+        </div>
+      </main>
+    </div>
+    <footer class="foot" id="foot"></footer>
+  </div>
+
+  <script src="../js/data/seed.js"></script>
+  <script src="../js/api.js"></script>
+  <script src="../js/main.js"></script>
+  <script src="../js/modules/account.js"></script>
+</body>
+</html>

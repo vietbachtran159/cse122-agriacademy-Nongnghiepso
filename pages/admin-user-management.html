@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Quản lý người dùng · AgriAcademy</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/modules.css">
+  <link rel="stylesheet" href="../css/responsive.css">
+</head>
+<body data-page="admin-user-management" data-role="admin">
+
+  <div class="app">
+    <header class="topbar" id="topbar"></header>
+    <div class="shell">
+      <aside class="sidebar" id="sidebar" aria-label="Điều hướng chính"></aside>
+      <main class="main" id="main">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <a href="admin-dashboard.html">Tổng quan hệ thống</a><span class="sep">/</span>
+          <span class="current">Người dùng</span>
+        </nav>
+
+        <div class="page-head">
+          <div>
+            <h1>Quản lý người dùng</h1>
+            <p class="sub">Tạo tài khoản, phân vai trò, khóa hoặc mở khóa người dùng trong hệ thống.</p>
+          </div>
+          <div class="page-head__actions">
+            <button class="btn btn--primary" type="button" id="user-add">+ Thêm tài khoản</button>
+          </div>
+        </div>
+
+        <section class="stat-grid" id="user-stats" aria-label="Thống kê tài khoản">
+          <div class="stat"><div><div class="skeleton skeleton--line w-60"></div><div class="skeleton skeleton--line w-80"></div></div></div>
+          <div class="stat"><div><div class="skeleton skeleton--line w-60"></div><div class="skeleton skeleton--line w-80"></div></div></div>
+          <div class="stat"><div><div class="skeleton skeleton--line w-60"></div><div class="skeleton skeleton--line w-80"></div></div></div>
+          <div class="stat"><div><div class="skeleton skeleton--line w-60"></div><div class="skeleton skeleton--line w-80"></div></div></div>
+        </section>
+
+        <div class="filter-bar">
+          <label class="visually-hidden" for="user-role">Vai trò</label>
+          <select class="select" id="user-role">
+            <option value="">Tất cả vai trò</option>
+            <option value="student">Sinh viên</option>
+            <option value="teacher">Giảng viên</option>
+            <option value="admin">Quản trị viên</option>
+          </select>
+          <label class="visually-hidden" for="user-status">Trạng thái</label>
+          <select class="select" id="user-status">
+            <option value="">Mọi trạng thái</option>
+            <option value="active">Hoạt động</option>
+            <option value="locked">Đang khóa</option>
+          </select>
+          <div class="search-field">
+            <span class="icon" aria-hidden="true">⌕</span>
+            <label class="visually-hidden" for="user-search">Tìm người dùng</label>
+            <input class="input" id="user-search" type="search" placeholder="Tìm tên, email, mã SV…">
+          </div>
+          <span class="result-count" id="user-count">Đang tải…</span>
+        </div>
+
+        <div class="table-wrap">
+          <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">Người dùng</th>
+                <th scope="col">Vai trò</th>
+                <th scope="col">Lớp / đơn vị</th>
+                <th scope="col">Trạng thái</th>
+                <th scope="col" class="num">Tham gia</th>
+                <th scope="col"><span class="visually-hidden">Hành động</span></th>
+              </tr>
+            </thead>
+            <tbody id="user-list">
+              <tr><td colspan="6"><div class="skeleton skeleton--line"></div><div class="skeleton skeleton--line w-80"></div></td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="callout callout--warn mt-2">
+          <span class="ico" aria-hidden="true">!</span>
+          <span>Không thể khóa hoặc xóa tài khoản đang dùng cho vai trò hiện tại. Tài khoản bị khóa sẽ bị bỏ qua khi chọn vai trò nhưng dữ liệu học tập vẫn được giữ.</span>
+        </div>
+      </main>
+    </div>
+    <footer class="foot" id="foot"></footer>
+  </div>
+
+  <script src="../js/data/seed.js"></script>
+  <script src="../js/api.js"></script>
+  <script src="../js/main.js"></script>
+  <script src="../js/modules/admin.js"></script>
+</body>
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Giới thiệu khóa học · AgriAcademy</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/modules.css">
+  <link rel="stylesheet" href="../css/responsive.css">
+</head>
+<body data-page="visitor-course-overview" data-role="guest">
+
+  <div class="app">
+    <header class="topbar" id="topbar"></header>
+    <div class="shell">
+      <aside class="sidebar" id="sidebar" aria-label="Điều hướng chính"></aside>
+      <main class="main" id="main">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <a href="../index.html">Trang chủ</a><span class="sep">/</span><span class="current">Khóa học</span>
+        </nav>
+
+        <div class="page-head">
+          <div>
+            <h1>Hệ thống hỗ trợ giảng dạy và học tập môn Nông nghiệp</h1>
+            <p class="sub">AgriAcademy biến kiến thức nông học thành quy trình học tập có dữ liệu: lịch mùa vụ, nhật ký đồng ruộng, chẩn đoán sâu bệnh và bài tập tình huống.</p>
+          </div>
+          <div class="page-head__actions">
+            <a class="btn btn--ghost" href="visitor-season-guide.html">Hướng dẫn mùa vụ</a>
+            <a class="btn btn--primary" href="student-dashboard.html" data-role-jump="student">Vào học ngay</a>
+          </div>
+        </div>
+
+        <section class="stat-grid" aria-label="Quy mô nội dung">
+          <div class="stat"><span class="stat__icon">▤</span><div><div class="stat__num" data-count="lessons">—</div><div class="stat__label">Bài giảng đã xuất bản</div></div></div>
+          <div class="stat stat--amber"><span class="stat__icon">❧</span><div><div class="stat__num" data-count="crops">—</div><div class="stat__label">Cây trồng trong thư viện</div></div></div>
+          <div class="stat stat--sky"><span class="stat__icon">◎</span><div><div class="stat__num" data-count="pests">—</div><div class="stat__label">Hồ sơ sâu bệnh đã duyệt</div></div></div>
+          <div class="stat stat--clay"><span class="stat__icon">✎</span><div><div class="stat__num" data-count="exercises">—</div><div class="stat__label">Bài tập tình huống</div></div></div>
+        </section>
+
+        <div class="grid grid--sidebar">
+          <section class="card" aria-labelledby="overview-lessons-title">
+            <div class="card__head">
+              <div>
+                <h2 id="overview-lessons-title">Bài giảng nổi bật</h2>
+                <p class="card__hint">Nội dung biên soạn theo vụ mùa và nhóm cây trồng chủ lực.</p>
+              </div>
+              <span class="badge badge--success">Công khai</span>
+            </div>
+            <ul class="list-clean" id="overview-lessons">
+              <li><div class="skeleton skeleton--line w-80"></div><div class="skeleton skeleton--line w-60"></div></li>
+              <li><div class="skeleton skeleton--line w-80"></div><div class="skeleton skeleton--line w-60"></div></li>
+            </ul>
+            <div class="divider"></div>
+            <p class="small muted mb-1">Cây trồng đang được giảng dạy</p>
+            <div class="chip-row" id="overview-crops"></div>
+          </section>
+
+          <aside class="card" aria-labelledby="methods-title">
+            <div class="card__head"><h2 id="methods-title" style="font-size:1.05rem">Bốn cách học</h2></div>
+            <ul class="list-clean">
+              <li class="list-row"><span class="ico">▥</span><span class="grow"><strong>Lịch mùa vụ</strong><span>Gieo – chăm sóc – bón phân – thu hoạch</span></span></li>
+              <li class="list-row"><span class="ico">✎</span><span class="grow"><strong>Nhật ký cây trồng</strong><span>Ghi chép hoạt động theo ngày</span></span></li>
+              <li class="list-row"><span class="ico">◎</span><span class="grow"><strong>Chẩn đoán sâu bệnh</strong><span>So khớp triệu chứng với hồ sơ</span></span></li>
+              <li class="list-row"><span class="ico">✓</span><span class="grow"><strong>Bài tập từng bước</strong><span>Lời giải và phản hồi của giảng viên</span></span></li>
+            </ul>
+            <div class="divider"></div>
+            <div class="callout"><span class="ico">i</span><span>Khách truy cập có thể xem thư viện và lịch mẫu; chuyển sang vai trò sinh viên để lưu nhật ký và làm bài tập.</span></div>
+          </aside>
+        </div>
+
+        <section class="section mt-2" aria-labelledby="roles-title">
+          <div class="section-head"><h2 id="roles-title">Ai dùng AgriAcademy?</h2></div>
+          <div class="role-strip">
+            <article class="role-card"><span class="tag">Sinh viên</span><h3>Học theo mùa vụ</h3><p>Lập lịch, ghi nhật ký và luyện chẩn đoán trên chính cây trồng của mình.</p></article>
+            <article class="role-card"><span class="tag">Giảng viên</span><h3>Biên soạn và chấm</h3><p>Quản lý nội dung, xây dựng bài tập nhiều bước và phản hồi bài nộp.</p></article>
+            <article class="role-card"><span class="tag">Quản trị</span><h3>Kiểm duyệt</h3><p>Quản lý tài khoản và duyệt hồ sơ sâu bệnh trước khi công khai.</p></article>
+            <article class="role-card"><span class="tag">Khách</span><h3>Tra cứu</h3><p>Xem thư viện cây trồng và khung mùa vụ mẫu không cần tài khoản.</p></article>
+          </div>
+        </section>
+      </main>
+    </div>
+    <footer class="foot" id="foot"></footer>
+  </div>
+
+  <script src="../js/data/seed.js"></script>
+  <script src="../js/api.js"></script>
+  <script src="../js/main.js"></script>
+  <script src="../js/modules/visitor.js"></script>
+</body>
+</html>

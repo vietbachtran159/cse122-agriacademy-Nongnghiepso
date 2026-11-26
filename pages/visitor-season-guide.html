@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Hướng dẫn mùa vụ · AgriAcademy</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/modules.css">
+  <link rel="stylesheet" href="../css/responsive.css">
+</head>
+<body data-page="visitor-season-guide" data-role="guest">
+
+  <div class="app">
+    <header class="topbar" id="topbar"></header>
+    <div class="shell">
+      <aside class="sidebar" id="sidebar" aria-label="Điều hướng chính"></aside>
+      <main class="main" id="main">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <a href="../index.html">Trang chủ</a><span class="sep">/</span>
+          <a href="visitor-course-overview.html">Khóa học</a><span class="sep">/</span>
+          <span class="current">Hướng dẫn mùa vụ</span>
+        </nav>
+
+        <div class="page-head">
+          <div>
+            <h1>Hướng dẫn mùa vụ</h1>
+            <p class="sub">Chọn cây trồng để xem khung thời gian gieo trồng, chăm sóc, bón phân và thu hoạch theo vùng miền.</p>
+          </div>
+          <div class="page-head__actions">
+            <label class="visually-hidden" for="guide-crop">Chọn cây trồng</label>
+            <select class="select" id="guide-crop" style="min-width:200px"></select>
+          </div>
+        </div>
+
+        <div class="season-legend" aria-label="Chú giải giai đoạn">
+          <span class="item"><span class="swatch" style="background:var(--green-500)"></span>Gieo hạt / Cấy</span>
+          <span class="item"><span class="swatch" style="background:var(--amber-500)"></span>Chăm sóc</span>
+          <span class="item"><span class="swatch" style="background:var(--clay-600)"></span>Bón phân</span>
+          <span class="item"><span class="swatch" style="background:var(--sky-600)"></span>Thu hoạch</span>
+        </div>
+
+        <section class="card" id="guide-detail" aria-live="polite">
+          <div class="skeleton skeleton--line w-60"></div>
+          <div class="skeleton skeleton--line w-80"></div>
+          <div class="skeleton skeleton--block"></div>
+        </section>
+
+        <section class="section mt-2" aria-labelledby="phase-guide-title">
+          <div class="section-head">
+            <h2 id="phase-guide-title">Việc cần làm theo giai đoạn</h2>
+            <span class="hint">Khung gợi ý chung cho mọi cây trồng</span>
+          </div>
+          <div class="phase-guide">
+            <div class="step" data-phase="gieo"><b>Gieo hạt</b>Chọn giống sạch bệnh, xử lý hạt, giữ ẩm cho hạt nảy mầm.</div>
+            <div class="step" data-phase="cay"><b>Cấy / trồng</b>Đúng mật độ, tưới đẫm sau trồng, che nắng 2–3 ngày đầu.</div>
+            <div class="step" data-phase="cham-soc"><b>Chăm sóc</b>Làm cỏ, tỉa nhánh, thăm ruộng 2 lần/tuần và ghi nhật ký.</div>
+            <div class="step" data-phase="bon-phan"><b>Bón phân</b>Chia nhỏ nhiều đợt, bón đúng công thức, tránh bón khi trời nắng.</div>
+            <div class="step" data-phase="thu-hoach"><b>Thu hoạch</b>Thu đúng độ chín, phân loại ngay tại ruộng, bảo quản khô ráo.</div>
+          </div>
+        </section>
+      </main>
+    </div>
+    <footer class="foot" id="foot"></footer>
+  </div>
+
+  <script src="../js/data/seed.js"></script>
+  <script src="../js/api.js"></script>
+  <script src="../js/main.js"></script>
+  <script src="../js/modules/visitor.js"></script>
+</body>
+</html>

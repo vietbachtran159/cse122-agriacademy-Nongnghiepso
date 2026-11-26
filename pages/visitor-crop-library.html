@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Thư viện cây trồng · AgriAcademy</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/modules.css">
+  <link rel="stylesheet" href="../css/responsive.css">
+</head>
+<body data-page="visitor-crop-library" data-role="guest">
+
+  <div class="app">
+    <header class="topbar" id="topbar"></header>
+    <div class="shell">
+      <aside class="sidebar" id="sidebar" aria-label="Điều hướng chính"></aside>
+      <main class="main" id="main">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <a href="../index.html">Trang chủ</a><span class="sep">/</span>
+          <a href="visitor-course-overview.html">Khóa học</a><span class="sep">/</span>
+          <span class="current">Thư viện cây trồng</span>
+        </nav>
+
+        <div class="page-head">
+          <div>
+            <h1>Thư viện cây trồng</h1>
+            <p class="sub">Tra cứu đặc điểm, vùng trồng và quy trình chăm sóc từng bước của các cây trồng chủ lực.</p>
+          </div>
+          <div class="page-head__actions">
+            <a class="btn btn--ghost" href="visitor-season-guide.html">Xem khung mùa vụ</a>
+          </div>
+        </div>
+
+        <div class="filter-bar" role="search" aria-label="Lọc cây trồng">
+          <div class="search-field">
+            <span class="icon" aria-hidden="true">⌕</span>
+            <label class="visually-hidden" for="lib-search">Tìm theo tên cây</label>
+            <input class="input" id="lib-search" type="search" placeholder="Tìm tên cây, vùng trồng…">
+          </div>
+          <label class="visually-hidden" for="lib-region">Vùng miền</label>
+          <select class="select" id="lib-region"><option value="">Tất cả vùng miền</option></select>
+          <label class="visually-hidden" for="lib-season">Mùa vụ</label>
+          <select class="select" id="lib-season"><option value="">Tất cả mùa vụ</option></select>
+          <button class="btn btn--ghost btn--sm" type="button" id="lib-reset">Xóa lọc</button>
+          <span class="result-count" id="lib-count">Đang tải…</span>
+        </div>
+
+        <div class="crop-grid" id="crop-grid" aria-live="polite">
+          <div class="card"><div class="skeleton skeleton--block"></div><div class="skeleton skeleton--line w-80" style="margin-top:12px"></div><div class="skeleton skeleton--line w-60"></div></div>
+          <div class="card"><div class="skeleton skeleton--block"></div><div class="skeleton skeleton--line w-80" style="margin-top:12px"></div><div class="skeleton skeleton--line w-60"></div></div>
+          <div class="card"><div class="skeleton skeleton--block"></div><div class="skeleton skeleton--line w-80" style="margin-top:12px"></div><div class="skeleton skeleton--line w-60"></div></div>
+        </div>
+
+        <div class="callout callout--info mt-2">
+          <span class="ico" aria-hidden="true">i</span>
+          <span>Danh mục được giảng viên cập nhật. Chuyển sang vai trò sinh viên để gắn cây trồng vào mùa vụ và ghi nhật ký chăm sóc.</span>
+        </div>
+      </main>
+    </div>
+    <footer class="foot" id="foot"></footer>
+  </div>
+
+  <script src="../js/data/seed.js"></script>
+  <script src="../js/api.js"></script>
+  <script src="../js/main.js"></script>
+  <script src="../js/modules/visitor.js"></script>
+</body>
+</html>

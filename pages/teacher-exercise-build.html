@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Xây dựng bài tập · AgriAcademy</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/modules.css">
+  <link rel="stylesheet" href="../css/responsive.css">
+</head>
+<body data-page="teacher-exercise-build" data-role="teacher">
+
+  <div class="app">
+    <header class="topbar" id="topbar"></header>
+    <div class="shell">
+      <aside class="sidebar" id="sidebar" aria-label="Điều hướng chính"></aside>
+      <main class="main" id="main">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <a href="teacher-dashboard.html">Tổng quan lớp</a><span class="sep">/</span>
+          <span class="current">Xây dựng bài tập</span>
+        </nav>
+
+        <div class="page-head">
+          <div>
+            <h1>Xây dựng bài tập tình huống</h1>
+            <p class="sub">Mỗi bài gồm nhiều bước: câu hỏi, bốn lựa chọn, đáp án đúng và lời giải hiển thị ngay cho sinh viên.</p>
+          </div>
+          <div class="page-head__actions">
+            <a class="btn btn--ghost" href="teacher-grading.html">Chấm bài nộp</a>
+            <button class="btn btn--primary" type="button" id="exercise-add">+ Tạo bài tập</button>
+          </div>
+        </div>
+
+        <div class="flex-between mb-1">
+          <span class="result-count" id="exercise-count">Đang tải…</span>
+          <span class="small muted">Bài tập đang mở sẽ hiển thị cho sinh viên làm.</span>
+        </div>
+
+        <section class="card" aria-label="Danh sách bài tập">
+          <div id="exercise-build-list" aria-live="polite">
+            <div class="manage-row"><div class="skeleton skeleton--line w-60" style="flex:1"></div></div>
+            <div class="manage-row"><div class="skeleton skeleton--line w-80" style="flex:1"></div></div>
+          </div>
+        </section>
+
+        <div class="callout callout--info mt-2">
+          <span class="ico" aria-hidden="true">i</span>
+          <span>Điểm do giảng viên chấm ở trang <strong>Chấm bài</strong>, thang điểm 0–10. Lời giải từng bước hiển thị ngay khi sinh viên kiểm tra đáp án.</span>
+        </div>
+      </main>
+    </div>
+    <footer class="foot" id="foot"></footer>
+  </div>
+
+  <script src="../js/data/seed.js"></script>
+  <script src="../js/api.js"></script>
+  <script src="../js/main.js"></script>
+  <script src="../js/modules/manage.js"></script>
+</body>
+</html>

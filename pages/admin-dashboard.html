@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tổng quan hệ thống · AgriAcademy</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/modules.css">
+  <link rel="stylesheet" href="../css/responsive.css">
+</head>
+<body data-page="admin-dashboard" data-role="admin">
+
+  <div class="app">
+    <header class="topbar" id="topbar"></header>
+    <div class="shell">
+      <aside class="sidebar" id="sidebar" aria-label="Điều hướng chính"></aside>
+      <main class="main" id="main">
+        <div class="page-head">
+          <div>
+            <h1>Tổng quan hệ thống</h1>
+            <p class="sub">Tài khoản, nội dung kiểm duyệt và tình trạng dữ liệu của AgriAcademy.</p>
+          </div>
+          <div class="page-head__actions">
+            <a class="btn btn--ghost" href="admin-pest-management.html">Duyệt sâu bệnh</a>
+            <a class="btn btn--primary" href="admin-user-management.html">Quản lý người dùng</a>
+          </div>
+        </div>
+
+        <section class="stat-grid" id="admin-stats" aria-label="Chỉ số hệ thống">
+          <div class="stat"><div><div class="skeleton skeleton--line w-60"></div><div class="skeleton skeleton--line w-80"></div></div></div>
+          <div class="stat"><div><div class="skeleton skeleton--line w-60"></div><div class="skeleton skeleton--line w-80"></div></div></div>
+          <div class="stat"><div><div class="skeleton skeleton--line w-60"></div><div class="skeleton skeleton--line w-80"></div></div></div>
+          <div class="stat"><div><div class="skeleton skeleton--line w-60"></div><div class="skeleton skeleton--line w-80"></div></div></div>
+        </section>
+
+        <div class="grid grid--sidebar">
+          <div>
+            <section class="card mb-2" aria-labelledby="pending-title">
+              <div class="card__head">
+                <div>
+                  <h2 id="pending-title" style="font-size:1.05rem">Hồ sơ sâu bệnh chờ duyệt</h2>
+                  <p class="card__hint">Chỉ hồ sơ đã duyệt mới dùng được trong chẩn đoán.</p>
+                </div>
+                <a class="btn btn--link btn--sm" href="admin-pest-management.html">Mở thư viện →</a>
+              </div>
+              <div class="admin-grid" id="pending-pests">
+                <div class="card"><div class="skeleton skeleton--line w-60"></div><div class="skeleton skeleton--line w-80"></div></div>
+              </div>
+            </section>
+
+            <section class="card" aria-labelledby="roles-title">
+              <div class="card__head">
+                <div>
+                  <h2 id="roles-title" style="font-size:1.05rem">Phân bố tài khoản</h2>
+                  <p class="card__hint">Theo vai trò và trạng thái hoạt động.</p>
+                </div>
+              </div>
+              <div class="list-clean" id="admin-users-summary"></div>
+            </section>
+          </div>
+
+          <aside>
+            <section class="card mb-2" aria-labelledby="activity-title">
+              <div class="card__head"><h2 id="activity-title" style="font-size:1.05rem">Hoạt động gần đây</h2></div>
+              <ul class="timeline" id="admin-activity"></ul>
+            </section>
+
+            <section class="card" aria-labelledby="system-title">
+              <div class="card__head"><h2 id="system-title" style="font-size:1.05rem">Trạng thái dữ liệu</h2></div>
+              <div class="list-clean" id="system-info"></div>
+            </section>
+          </aside>
+        </div>
+      </main>
+    </div>
+    <footer class="foot" id="foot"></footer>
+  </div>
+
+  <script src="../js/data/seed.js"></script>
+  <script src="../js/api.js"></script>
+  <script src="../js/main.js"></script>
+  <script src="../js/modules/dashboard.js"></script>
+</body>
+</html>

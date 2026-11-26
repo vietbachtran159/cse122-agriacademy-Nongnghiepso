@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Thư viện sâu bệnh · AgriAcademy</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/modules.css">
+  <link rel="stylesheet" href="../css/responsive.css">
+</head>
+<body data-page="admin-pest-management" data-role="admin">
+
+  <div class="app">
+    <header class="topbar" id="topbar"></header>
+    <div class="shell">
+      <aside class="sidebar" id="sidebar" aria-label="Điều hướng chính"></aside>
+      <main class="main" id="main">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <a href="admin-dashboard.html">Tổng quan hệ thống</a><span class="sep">/</span>
+          <span class="current">Thư viện sâu bệnh</span>
+        </nav>
+
+        <div class="page-head">
+          <div>
+            <h1>Thư viện sâu bệnh</h1>
+            <p class="sub">Duyệt hồ sơ trước khi đưa vào chẩn đoán, cập nhật triệu chứng và hướng xử lý.</p>
+          </div>
+          <div class="page-head__actions">
+            <button class="btn btn--primary" type="button" id="pest-add">+ Thêm hồ sơ</button>
+          </div>
+        </div>
+
+        <section class="stat-grid" id="pest-stats" aria-label="Thống kê hồ sơ">
+          <div class="stat"><div><div class="skeleton skeleton--line w-60"></div><div class="skeleton skeleton--line w-80"></div></div></div>
+          <div class="stat"><div><div class="skeleton skeleton--line w-60"></div><div class="skeleton skeleton--line w-80"></div></div></div>
+          <div class="stat"><div><div class="skeleton skeleton--line w-60"></div><div class="skeleton skeleton--line w-80"></div></div></div>
+          <div class="stat"><div><div class="skeleton skeleton--line w-60"></div><div class="skeleton skeleton--line w-80"></div></div></div>
+        </section>
+
+        <div class="filter-bar">
+          <label class="visually-hidden" for="pest-status">Trạng thái</label>
+          <select class="select" id="pest-status">
+            <option value="">Tất cả trạng thái</option>
+            <option value="pending">Chờ duyệt</option>
+            <option value="approved">Đã duyệt</option>
+            <option value="rejected">Bị từ chối</option>
+          </select>
+          <label class="visually-hidden" for="pest-crop">Cây trồng</label>
+          <select class="select" id="pest-crop"><option value="">Tất cả cây trồng</option></select>
+          <div class="search-field">
+            <span class="icon" aria-hidden="true">⌕</span>
+            <label class="visually-hidden" for="pest-search">Tìm sâu bệnh</label>
+            <input class="input" id="pest-search" type="search" placeholder="Tìm tên, triệu chứng…">
+          </div>
+          <span class="result-count" id="pest-count">Đang tải…</span>
+        </div>
+
+        <div class="table-wrap">
+          <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">Sâu bệnh / triệu chứng</th>
+                <th scope="col">Cây trồng</th>
+                <th scope="col">Mức hại</th>
+                <th scope="col">Trạng thái</th>
+                <th scope="col">Hướng xử lý</th>
+                <th scope="col"><span class="visually-hidden">Hành động</span></th>
+              </tr>
+            </thead>
+            <tbody id="pest-list">
+              <tr><td colspan="6"><div class="skeleton skeleton--line"></div><div class="skeleton skeleton--line w-80"></div></td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="callout callout--info mt-2">
+          <span class="ico" aria-hidden="true">i</span>
+          <span>Hồ sơ <strong>Bị từ chối</strong> vẫn được lưu để tra cứu nhưng không xuất hiện trong kết quả chẩn đoán của sinh viên.</span>
+        </div>
+      </main>
+    </div>
+    <footer class="foot" id="foot"></footer>
+  </div>
+
+  <script src="../js/data/seed.js"></script>
+  <script src="../js/api.js"></script>
+  <script src="../js/main.js"></script>
+  <script src="../js/modules/admin.js"></script>
+</body>
+</html>

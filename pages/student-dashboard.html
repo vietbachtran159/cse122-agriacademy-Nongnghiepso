@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tổng quan sinh viên · AgriAcademy</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/modules.css">
+  <link rel="stylesheet" href="../css/responsive.css">
+</head>
+<body data-page="student-dashboard" data-role="student">
+
+  <div class="app">
+    <header class="topbar" id="topbar"></header>
+    <div class="shell">
+      <aside class="sidebar" id="sidebar" aria-label="Điều hướng chính"></aside>
+      <main class="main" id="main">
+        <div class="page-head">
+          <div>
+            <h1 id="dash-greeting">Chào bạn!</h1>
+            <p class="sub">Đây là tình hình học tập và mùa vụ của bạn trong tuần này.</p>
+          </div>
+          <div class="page-head__actions">
+            <a class="btn btn--ghost" href="student-crop-journal.html">Ghi nhật ký</a>
+            <a class="btn btn--primary" href="student-season-calendar.html">Mở lịch mùa vụ</a>
+          </div>
+        </div>
+
+        <section class="stat-grid" id="student-stats" aria-label="Chỉ số học tập">
+          <div class="stat"><div><div class="skeleton skeleton--line w-60"></div><div class="skeleton skeleton--line w-80"></div></div></div>
+          <div class="stat"><div><div class="skeleton skeleton--line w-60"></div><div class="skeleton skeleton--line w-80"></div></div></div>
+          <div class="stat"><div><div class="skeleton skeleton--line w-60"></div><div class="skeleton skeleton--line w-80"></div></div></div>
+          <div class="stat"><div><div class="skeleton skeleton--line w-60"></div><div class="skeleton skeleton--line w-80"></div></div></div>
+        </section>
+
+        <div class="grid grid--sidebar">
+          <div>
+            <section class="card mb-2" aria-labelledby="continue-title">
+              <div class="card__head">
+                <h2 id="continue-title" style="font-size:1.05rem">Tiếp tục học</h2>
+                <a class="btn btn--link btn--sm" href="student-lesson-view.html">Tất cả bài giảng →</a>
+              </div>
+              <div id="continue-lesson">
+                <div class="skeleton skeleton--line w-60"></div>
+                <div class="skeleton skeleton--line w-80"></div>
+                <div class="skeleton skeleton--block"></div>
+              </div>
+            </section>
+
+            <section class="card mb-2" aria-labelledby="phases-title">
+              <div class="card__head">
+                <div>
+                  <h2 id="phases-title" style="font-size:1.05rem">Giai đoạn sắp tới</h2>
+                  <p class="card__hint">Tính từ lịch mùa vụ bạn đã đăng ký.</p>
+                </div>
+                <a class="btn btn--link btn--sm" href="student-season-calendar.html">Mở lịch →</a>
+              </div>
+              <div id="upcoming-phases" class="list-clean"></div>
+            </section>
+
+            <section class="card" aria-labelledby="journal-title">
+              <div class="card__head">
+                <div>
+                  <h2 id="journal-title" style="font-size:1.05rem">Nhật ký gần đây</h2>
+                  <p class="card__hint">Bốn bản ghi mới nhất của bạn.</p>
+                </div>
+                <a class="btn btn--link btn--sm" href="student-crop-journal.html">Ghi mới →</a>
+              </div>
+              <div id="recent-journal" class="list-clean"></div>
+            </section>
+          </div>
+
+          <aside>
+            <section class="card mb-2" aria-labelledby="todo-title">
+              <div class="card__head">
+                <div>
+                  <h2 id="todo-title" style="font-size:1.05rem">Bài tập cần làm</h2>
+                  <p class="card__hint">Bài tập tình huống chưa nộp.</p>
+                </div>
+              </div>
+              <div id="todo-exercises" class="list-clean"></div>
+            </section>
+
+            <section class="card" aria-labelledby="quick-title">
+              <div class="card__head"><h2 id="quick-title" style="font-size:1.05rem">Truy cập nhanh</h2></div>
+              <div class="list-clean">
+                <a class="list-row" href="student-pest-diagnose.html"><span class="ico">◎</span><span class="grow"><strong>Chẩn đoán sâu bệnh</strong><span>Từ triệu chứng quan sát</span></span></a>
+                <a class="list-row" href="student-exercise-do.html"><span class="ico">✎</span><span class="grow"><strong>Bài tập tình huống</strong><span>Luyện từng bước có lời giải</span></span></a>
+                <a class="list-row" href="visitor-crop-library.html"><span class="ico">❧</span><span class="grow"><strong>Thư viện cây trồng</strong><span>Quy trình chăm sóc</span></span></a>
+                <a class="list-row" href="notifications.html"><span class="ico">◔</span><span class="grow"><strong>Thông báo</strong><span>Cập nhật lớp học</span></span></a>
+              </div>
+            </section>
+          </aside>
+        </div>
+      </main>
+    </div>
+    <footer class="foot" id="foot"></footer>
+  </div>
+
+  <script src="../js/data/seed.js"></script>
+  <script src="../js/api.js"></script>
+  <script src="../js/main.js"></script>
+  <script src="../js/modules/dashboard.js"></script>
+</body>
+</html>

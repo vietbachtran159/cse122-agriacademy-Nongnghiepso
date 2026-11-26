@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tổng quan lớp · AgriAcademy</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/modules.css">
+  <link rel="stylesheet" href="../css/responsive.css">
+</head>
+<body data-page="teacher-dashboard" data-role="teacher">
+
+  <div class="app">
+    <header class="topbar" id="topbar"></header>
+    <div class="shell">
+      <aside class="sidebar" id="sidebar" aria-label="Điều hướng chính"></aside>
+      <main class="main" id="main">
+        <div class="page-head">
+          <div>
+            <h1>Tổng quan lớp học</h1>
+            <p class="sub">Nội dung giảng dạy, tiến độ sinh viên và hàng chờ chấm bài trong một màn hình.</p>
+          </div>
+          <div class="page-head__actions">
+            <a class="btn btn--ghost" href="teacher-lesson-manage.html">Quản lý bài giảng</a>
+            <a class="btn btn--primary" href="teacher-grading.html">Chấm bài</a>
+          </div>
+        </div>
+
+        <section class="stat-grid" id="teacher-stats" aria-label="Chỉ số giảng dạy">
+          <div class="stat"><div><div class="skeleton skeleton--line w-60"></div><div class="skeleton skeleton--line w-80"></div></div></div>
+          <div class="stat"><div><div class="skeleton skeleton--line w-60"></div><div class="skeleton skeleton--line w-80"></div></div></div>
+          <div class="stat"><div><div class="skeleton skeleton--line w-60"></div><div class="skeleton skeleton--line w-80"></div></div></div>
+          <div class="stat"><div><div class="skeleton skeleton--line w-60"></div><div class="skeleton skeleton--line w-80"></div></div></div>
+        </section>
+
+        <div class="grid grid--sidebar">
+          <div>
+            <section class="card mb-2" aria-labelledby="queue-title">
+              <div class="card__head">
+                <div>
+                  <h2 id="queue-title" style="font-size:1.05rem">Hàng chờ chấm bài</h2>
+                  <p class="card__hint">Bài nộp mới nhất từ sinh viên.</p>
+                </div>
+                <a class="btn btn--link btn--sm" href="teacher-grading.html">Tất cả →</a>
+              </div>
+              <div class="list-clean" id="grading-queue"></div>
+            </section>
+
+            <section class="card" aria-labelledby="progress-title">
+              <div class="card__head">
+                <div>
+                  <h2 id="progress-title" style="font-size:1.05rem">Tiến độ học bài giảng</h2>
+                  <p class="card__hint">Số bài đã đánh dấu hoàn thành / tổng bài xuất bản.</p>
+                </div>
+              </div>
+              <div id="class-progress"></div>
+            </section>
+          </div>
+
+          <aside>
+            <section class="card mb-2" aria-labelledby="activity-title">
+              <div class="card__head"><h2 id="activity-title" style="font-size:1.05rem">Hoạt động gần đây</h2></div>
+              <ul class="timeline" id="teacher-activity"></ul>
+            </section>
+
+            <section class="card" aria-labelledby="tools-title">
+              <div class="card__head"><h2 id="tools-title" style="font-size:1.05rem">Công cụ biên soạn</h2></div>
+              <div class="list-clean">
+                <a class="list-row" href="teacher-lesson-manage.html"><span class="ico">▤</span><span class="grow"><strong>Bài giảng</strong><span>Thêm, sửa, ẩn/xuất bản</span></span></a>
+                <a class="list-row" href="teacher-crop-manage.html"><span class="ico">❧</span><span class="grow"><strong>Cây trồng</strong><span>Quy trình chăm sóc</span></span></a>
+                <a class="list-row" href="teacher-exercise-build.html"><span class="ico">✎</span><span class="grow"><strong>Bài tập</strong><span>Xây dựng nhiều bước</span></span></a>
+                <a class="list-row" href="teacher-grading.html"><span class="ico">✓</span><span class="grow"><strong>Chấm bài</strong><span>Điểm và nhận xét</span></span></a>
+              </div>
+            </section>
+          </aside>
+        </div>
+      </main>
+    </div>
+    <footer class="foot" id="foot"></footer>
+  </div>
+
+  <script src="../js/data/seed.js"></script>
+  <script src="../js/api.js"></script>
+  <script src="../js/main.js"></script>
+  <script src="../js/modules/dashboard.js"></script>
+</body>
+</html>
